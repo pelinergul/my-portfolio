@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Spline+Sans&display=swap');
+
+@layer reset {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Spline Sans', sans-serif;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+}
+
+@layer navbar {
+  .navbar {
+    height: 30px;
+  }
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: rgba(128, 128, 128, 0.666);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    text-decoration: none;
+    font-size: 36px;
+    color: #fffefe;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 40px;
+  }
+
+  .active {
+    width: 100%;
+  }
+  .navbar:has(.active) .hamburger-menu {
+    display: none;
+  }
+
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+    }
+  }
+
+  .hamburger-menu {
+    font-size:30px;
+    cursor:pointer;
+    position: absolute;
+    right: 10px;
+    color: white;
+  }
+}
+
+@layer home-page {
+  .home-page-container {
+    height: 100vh;
+    width: 100%;
+    background-image: url('assets/img/background.JPG');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .home-page-container h1 {
+    color: #FFF;
+    font-family: Bebas Neue;
+    font-size: 196px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 196px */
+    letter-spacing: -3.92px;
+    text-transform: uppercase;
+  }
+}
